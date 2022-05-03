@@ -12,10 +12,11 @@ body {
 }
 
 button {
-    font-size: 2rem;
+    font-size: 2.5rem;
     border: 1px solid white;
     outline:none;
     background-color: rgb(238, 175, 175);
+    padding: 15px;
 }
 
 button:hover {
@@ -23,7 +24,7 @@ button:hover {
     cursor: pointer;
 }
 
-.span-two {
+#span-two {
     grid-column: span 2;
 }
 
@@ -37,14 +38,16 @@ button:hover {
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
+    min-height: 75px;
 }
 
-.output .previous-operand {
+.output .previousOperand {
     color:rgb(219, 204, 204);
     font-size: 1.5rem;
 }
 
-.output .current-operand {
+.output .currentOperand {
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
+
