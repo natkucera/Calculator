@@ -1,15 +1,15 @@
 const numbersBtn = document.querySelectorAll('[data-number]')
 const operatorsBtn = document.querySelectorAll('[data-operator]')
-const equalsBtn = document.querySelectorAll('[data-equals]')
-const deleteBtn = document.querySelectorAll('[data-delete]')
-const allClearBtn = document.querySelectorAll('[data-allClear')
-const previousOperandTxt = document.querySelectorAll('[data-previousOperand]')
-const currentOperandTxt = document.querySelectorAll('[data-currentOperand]')
+const equalsBtn = document.querySelector('[data-equals]')
+const deleteBtn = document.querySelector('[data-delete]')
+const allClearBtn = document.querySelector('[data-allClear]')
+const previousOperandTxt = document.querySelector('[data-previousOperand]')
+const currentOperandTxt = document.querySelector('[data-currentOperand]')
 
 class Calculator {
     constructor(previousOperandTxt, currentOperandTxt) {
-        this.previousOperandTxt = previousOperandTxt;
-        this.currentOperandTxt = currentOperandTxt;
+        this.previousOperandTxt = previousOperandTxt
+        this.currentOperandTxt = currentOperandTxt
         this.clear()
     }
 
@@ -43,16 +43,21 @@ class Calculator {
         const previous = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
             if (isNaN(previous) || isNaN(current)) return
-            if (this.operation = '+') {
-                calculate = previous + current
-            } if (this.operation = '-') {
-                calculate = previous - current
-            } if (this.operation = '*') {
-                calculate = previous * current
-            } if (this.operation = '÷') {
-                calculate = previous / current
-            } else {
-                return
+            switch (this.operation) {
+                case '+':
+                    calculate = previous + current
+                    break
+                case '-':
+                    calculate = previous - current
+                    break
+                case '÷':
+                    calculate = previous / current
+                    break
+                case '*':
+                    calculate = previous * current
+                    break
+                default: 
+                    return
             }
       
         this.currentOperand = calculate
@@ -60,11 +65,14 @@ class Calculator {
         this.previousOperand =''
     }
 
+
     updateDisplay() {
         this.currentOperandTxt.innerText = this.currentOperand
         this.previousOperandTxt.innerText = this.previousOperand
         if (this.operation != null) {
             previousOperandTxt.innerText = `${this.previousOperand} ${this.operation}`
+        } else {
+            this.previousOperandTxt.innerText = ''
         }
     }
 }
@@ -85,7 +93,7 @@ operatorsBtn.forEach(button => {
     })
 })
 
-equalsBtn.addEventListener('click', button => {
+equalsBtn.addEventListener('click', button=> {
     calculator.compute()
     calculator.updateDisplay()
 })
