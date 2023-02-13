@@ -1,2 +1,1 @@
-# Odin-Calculator
-Calculator project for Odin
+Calculator Web Application
