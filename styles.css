@@ -33,6 +33,7 @@ body {
 
 .calculator-grid {
     display: grid;
+    border-width: 2px;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 100px);
@@ -70,11 +71,19 @@ button {
 
 
 .EQUAL {
-    background-color: #E4B363;
+    background-color: #ecb762;
+}
+
+.EQUAL:hover {
+    background-color: #ffd797;
 }
 
 .CLEAR {
     background-color: #73D2DE;
+}
+
+.CLEAR:hover {
+    background-color: #83e9f7;
 }
 
 #span-two {
